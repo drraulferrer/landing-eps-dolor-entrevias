@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-01T00:00:00Z",
+  "title": "Design System: Landing EPS Dolor Crónico · CS Entrevías",
+  "extensions": {
+    "colorMeta": {
+      "azul-saludmadrid": { "role": "primary", "displayName": "Azul SaludMadrid", "canonical": "#0067A0", "tonalRamp": ["#062338", "#093B5C", "#0C4F7C", "#0067A0", "#3389B9", "#66ABCE", "#A6D0E4", "#E8F2F8"] },
+      "azul-profundo": { "role": "primary", "displayName": "Azul Profundo", "canonical": "#004B73", "tonalRamp": ["#021925", "#04263A", "#063953", "#004B73", "#2E6F92", "#6299B4", "#A4C4D6", "#E3EEF4"] },
+      "terracota-paincafe": { "role": "secondary", "displayName": "Terracota PainCafé", "canonical": "#C2410C", "tonalRamp": ["#3A1304", "#5C1F07", "#8A2E09", "#C2410C", "#DB6531", "#E88F66", "#F2BFA3", "#FBEFE7"] },
+      "verde-movimiento": { "role": "tertiary", "displayName": "Verde Movimiento", "canonical": "#0D8A7A", "tonalRamp": ["#042A25", "#06423A", "#095F54", "#0D8A7A", "#33A497", "#66BEB4", "#A6DBD4", "#E6F5F2"] },
+      "violeta-etapa": { "role": "tertiary", "displayName": "Violeta Etapa", "canonical": "#7C3AED", "tonalRamp": ["#2A1252", "#3F1B7A", "#5A27AE", "#7C3AED", "#9A63F1", "#B78EF5", "#D6BFFA", "#EFE6FD"] },
+      "crema-calida": { "role": "neutral", "displayName": "Crema Cálida", "canonical": "#FAF7F2", "tonalRamp": ["#2B2823", "#4A453D", "#6E685E", "#948D81", "#B9B2A6", "#DAD3C7", "#EFE9E1", "#FAF7F2"] },
+      "arena": { "role": "neutral", "displayName": "Arena", "canonical": "#EFE9E1", "tonalRamp": ["#2B2820", "#4A453B", "#6C6557", "#8E8676", "#B0A897", "#D0C8B8", "#EFE9E1", "#FAF7F2"] },
+      "tinta": { "role": "neutral", "displayName": "Tinta", "canonical": "#1C1917", "tonalRamp": ["#0A0908", "#1C1917", "#3A342F", "#57504A", "#77706A", "#9B948E", "#C7C1BB", "#EDE9E5"] },
+      "tinta-suave": { "role": "neutral", "displayName": "Tinta Suave", "canonical": "#44403C", "tonalRamp": ["#1A1816", "#2E2B28", "#44403C", "#615C56", "#807A73", "#A29C94", "#C8C2BA", "#ECE8E3"] },
+      "ambar-resalte": { "role": "accent", "displayName": "Ámbar Resalte", "canonical": "#FFE08A", "tonalRamp": ["#4A3A0A", "#6E5710", "#94781A", "#BC9C2C", "#DFC04D", "#FFE08A", "#FFEBB0", "#FFF6DD"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Título del hero. Serif, azul profundo." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de sección (h2). Serif." },
+      "title": { "displayName": "Title", "purpose": "Subtítulos de tarjeta (beneficios, bloques, equipo). Sans." },
+      "body": { "displayName": "Body", "purpose": "Texto de lectura, 18px, línea contenida." },
+      "label": { "displayName": "Label", "purpose": "Eyebrows, roles, claves de datos, tags. Mayúsculas con tracking." }
+    },
+    "shadows": [
+      { "name": "ambient", "value": "0 4px 16px rgba(0, 47, 73, 0.08)", "purpose": "Única sombra del sistema, teñida de azul profundo. Elevación suave en tarjetas de datos, beneficios, bloques y pasos del CTA." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "0.25s ease", "purpose": "Transición por defecto: hover, foco, apertura de acordeón, rotación del chevron." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "600px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Eyebrow Pill",
+      "kind": "chip",
+      "refersTo": "eyebrow-pill",
+      "description": "Etiqueta de categoría/estado sobre el hero y secciones (verde o terracota).",
+      "html": "<span class=\"ds-eyebrow\">Programa grupal · Gratuito</span>",
+      "css": ".ds-eyebrow { display: inline-block; background: #0D8A7A; color: #fff; font-family: system-ui, sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 20px; }"
+    },
+    {
+      "name": "Benefit Card",
+      "kind": "card",
+      "refersTo": "card-benefit",
+      "description": "Tarjeta de beneficio con arista azul a la izquierda y sombra ambiental.",
+      "html": "<div class=\"ds-benefit\"><span class=\"ds-benefit-ico\" aria-hidden=\"true\">🧠</span><h3>Entender tu dolor</h3><p>Descubrir por qué duele y por qué el dolor crónico es una alarma demasiado sensible, no una señal de daño.</p></div>",
+      "css": ".ds-benefit { background: #fff; border-radius: 14px; padding: 1.1rem; border-left: 5px solid #0067A0; box-shadow: 0 4px 16px rgba(0,47,73,0.08); } .ds-benefit-ico { font-size: 1.7rem; } .ds-benefit h3 { font-family: system-ui, sans-serif; font-size: 1.05rem; color: #004B73; margin: 0.3rem 0 0.25rem; } .ds-benefit p { margin: 0; font-size: 0.95rem; color: #44403C; line-height: 1.6; }"
+    },
+    {
+      "name": "Myth Accordion Button",
+      "kind": "button",
+      "refersTo": "accordion-button",
+      "description": "Único control real de la página: acordeón accesible de mito/verdad.",
+      "html": "<button type=\"button\" class=\"ds-myth-btn\" aria-expanded=\"false\"><span class=\"ds-myth-label\"><span class=\"ds-myth-tag\">Mito</span>Si me duele al moverme, me estoy haciendo daño.</span><svg class=\"ds-chev\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 10l5 5 5-5z\"/></svg></button>",
+      "css": ".ds-myth-btn { width: 100%; min-height: 56px; padding: 1rem 1.15rem; background: #fff; border: 1px solid #EFE9E1; border-radius: 14px; cursor: pointer; font-family: system-ui, sans-serif; font-size: 1.02rem; font-weight: 700; color: #004B73; text-align: left; display: flex; align-items: center; gap: 0.8rem; transition: background 0.25s, border-color 0.25s; } .ds-myth-btn:hover { background: #E8F2F8; } .ds-myth-btn:focus-visible { outline: 4px solid #C2410C; outline-offset: 3px; } .ds-myth-label { flex: 1; } .ds-myth-tag { display: inline-block; background: #FDE7D9; color: #9A3412; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 4px; margin-right: 0.4rem; } .ds-chev { flex-shrink: 0; width: 22px; height: 22px; fill: #0067A0; transition: transform 0.25s; } .ds-myth-btn[aria-expanded=\"true\"] .ds-chev { transform: rotate(180deg); }"
+    },
+    {
+      "name": "Session Timeline Card",
+      "kind": "custom",
+      "refersTo": "card-benefit",
+      "description": "Tarjeta del cronograma sesión a sesión con marcador numerado (azul=teórica, verde=práctica).",
+      "html": "<div class=\"ds-ses\"><span class=\"ds-marker\" aria-hidden=\"true\">1</span><div class=\"ds-ses-card ds-highlight\"><div class=\"ds-ses-top\"><span class=\"ds-ses-date\">Vie 4 sep</span><span class=\"ds-ses-type\">Práctica</span></div><div class=\"ds-ses-title\">PainCafé de bienvenida</div></div></div>",
+      "css": ".ds-ses { position: relative; padding-left: 64px; } .ds-marker { position: absolute; left: 12px; top: 4px; width: 32px; height: 32px; border-radius: 50%; background: #0D8A7A; color: #fff; font-weight: 700; font-size: 0.9rem; display: grid; place-items: center; box-shadow: 0 0 0 4px #FAF7F2; } .ds-ses-card { background: #fff; border: 1px solid #EFE9E1; border-radius: 14px; padding: 0.9rem 1rem; } .ds-ses-card.ds-highlight { border: 2px solid #C2410C; background: #FBEFE7; } .ds-ses-top { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem; } .ds-ses-date { font-size: 0.8rem; font-weight: 700; color: #44403C; background: #EFE9E1; padding: 0.1rem 0.5rem; border-radius: 4px; } .ds-ses-type { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; padding: 0.12rem 0.5rem; border-radius: 4px; background: #E6F5F2; color: #0B6B5E; } .ds-ses-title { font-weight: 700; color: #004B73; line-height: 1.3; }"
+    },
+    {
+      "name": "CTA Step",
+      "kind": "custom",
+      "refersTo": "cta-panel",
+      "description": "Paso numerado del bloque de llamada a la acción sobre fondo azul profundo, con número en ámbar.",
+      "html": "<div class=\"ds-step\"><span class=\"ds-step-n\" aria-hidden=\"true\">1</span><span>Pide cita con tu médico/a o fisioterapeuta de Entrevías.</span></div>",
+      "css": ".ds-step { background: rgba(255,255,255,0.08); border-radius: 14px; padding: 0.9rem 1rem; display: flex; gap: 0.85rem; align-items: center; color: #fff; font-family: system-ui, sans-serif; font-size: 0.97rem; } .ds-step-n { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #FFE08A; color: #004B73; font-weight: 700; display: grid; place-items: center; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El PainCafé del barrio",
+    "overview": "El sistema visual imita el gesto que define al programa: sentarse a una mesa, tomar un café y hablar de igual a igual, sin batas ni camillas — pero dentro de un centro de salud público que da confianza. Es cálido primero, institucional de fondo. La estructura es de página única, generosa y de lectura pausada: fondo crema (nunca blanco clínico), tipografía grande (18px), tarjetas con esquinas suaves y aristas de color que guían la vista sin gritar. Cada bloque empuja a la persona del miedo a la acción, coherente con una marca empoderadora, activa y motivadora. El sistema rechaza cuatro registros: el folleto clínico frío, el look pharma/corporativo, la estética startup/SaaS y el wellness espiritual. El punto dulce es la proximidad de Vallecas con respaldo sanitario serio. La paleta es tricolor con propósito clínico-narrativo: azul = confianza sanitaria, terracota = acogida del PainCafé, verde = movimiento y salud activa.",
+    "keyCharacteristics": [
+      "Fondo crema cálido, jamás blanco quirúrgico.",
+      "Tipografía serif para titulares (voz humana) + sans del sistema para lectura (rendimiento y familiaridad).",
+      "Tarjetas planas con arista de color (top/left border 4–5px) como sistema de codificación, no sombras dramáticas.",
+      "Tres colores con significado fijo (azul/terracota/verde), no decoración.",
+      "Accesibilidad AA como material de construcción: 18px base, touch 56px, foco ámbar de 4px, contrastes altos."
+    ],
+    "rules": [
+      { "name": "La Regla de los Tres Significados", "body": "Azul = confianza sanitaria, terracota = acogida/PainCafé, verde = movimiento/acción. Un color nunca se usa 'porque queda bien': si no comunica uno de esos tres significados, se usa un neutro.", "section": "colors" },
+      { "name": "La Regla del Fondo Cálido", "body": "El fondo base es crema (#FAF7F2), nunca blanco puro a página completa. El blanco se reserva para superficies elevadas (tarjetas). Es lo que separa 'centro de salud acogedor' de 'consulta fría'.", "section": "colors" },
+      { "name": "La Regla de la Cursiva con Voz", "body": "La cursiva serif solo aparece en la tagline emocional y en las preguntas del PainCafé (citas). Es la voz cercana del programa; no se usa como énfasis decorativo.", "section": "typography" },
+      { "name": "La Regla de la Arista que Clasifica", "body": "El borde de color de una tarjeta no es adorno: codifica su naturaleza (verde = datos/acción, azul = beneficio, color por bloque en las 4 etapas, terracota = PainCafé). Añadir aristas de color sin significado rompe el sistema.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do mantener el fondo base en crema (#FAF7F2) y reservar el blanco para tarjetas.",
+      "Do usar cada color por su significado fijo: azul confianza, terracota acogida, verde movimiento.",
+      "Do conservar 18px de base, touch de 56px, longitud de línea contenida (~56–75ch) y el foco ámbar de 4px: son requisitos AA, no estética negociable.",
+      "Do emparejar serif (titulares/voz) con sans (lectura), nunca dos sans parecidas.",
+      "Do garantizar que el contenido esencial y el CTA se entienden sin JavaScript.",
+      "Do usar lenguaje inclusivo y sencillo (lectura fácil), una idea por bloque, metáforas concretas (la mochila, el detector de humo)."
+    ],
+    "donts": [
+      "Don't convertir esto en un folleto clínico frío: nada de estética aséptica, jerga médica ni listados burocráticos.",
+      "Don't caer en pharma/corporativo: nada de stock photos genéricas ni tono de marketing de producto.",
+      "Don't aplicar tells de startup/SaaS: gradientes de moda, 'eyebrow' en mayúsculas sobre CADA sección por defecto, ni marcadores 01/02/03 como andamiaje (los números solo cuando el orden informa, como en el cronograma).",
+      "Don't derivar a wellness/espiritual: nada de tonos místicos, 'sanación' ni promesas mágicas que resten credibilidad clínica.",
+      "Don't usar ámbar (#FFE08A) sobre fondos claros: solo funciona sobre el azul profundo del CTA.",
+      "Don't añadir aristas de color a una tarjeta sin un significado detrás; la arista clasifica, no decora.",
+      "Don't prometer curación. La marca promete herramientas, movimiento seguro y compañía — 'dolor no es daño'."
+    ]
+  }
+}

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convivir mejor con el dolor crónico · Programa grupal gratuito · CS Entrevías</title>
+  <meta name="description" content="Programa grupal y gratuito de educación para la salud sobre el dolor crónico musculoesquelético en el Centro de Salud Entrevías (SaludMadrid). 16 sesiones para entender el dolor, perder el miedo a moverte y vivir mejor.">
+  <meta name="theme-color" content="#0067A0">
+  <!-- Open Graph (al compartir el enlace) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aprende a vivir mejor con el dolor crónico — CS Entrevías">
+  <meta property="og:description" content="Programa grupal gratuito en tu centro de salud. El dolor crónico no significa daño: se puede aprender a vivir mejor.">
+  <meta property="og:locale" content="es_ES">
+  <style>
+    /* ==========================================================================
+       1. TOKENS DE DISEÑO — Paleta híbrida: confianza institucional + calidez
+       ========================================================================== */
+    :root {
+      --azul: #0067A0;            /* Azul SaludMadrid (confianza sanitaria) */
+      --azul-oscuro: #004B73;     /* Para títulos y fondos sólidos */
+      --azul-claro: #E8F2F8;      /* Fondos suaves de sección */
+      --ambar: #C2410C;           /* Terracota cálido: PainCafé, acogida */
+      --ambar-claro: #FBEFE7;
+      --ambar-borde: #EAD3C2;      /* Borde sutil tono ámbar */
+      --verde: #0D8A7A;           /* Cian-verde: movimiento, salud activa */
+      --verde-claro: #E6F5F2;
+      --violeta: #7C3AED;          /* Acento bloque D / docente */
+      --crema: #FAF7F2;           /* Fondo general cálido (no clínico) */
+      --blanco: #FFFFFF;
+      --arena: #EFE9E1;           /* Bordes y separadores */
+      --texto: #1C1917;           /* Casi negro (contraste > 12:1) */
+      --texto-suave: #44403C;     /* Secundario (contraste > 7:1) */
+      --amarillo: #FFE08A;        /* Resalte legible sobre azul */
+
+      --serif: Georgia, Cambria, "Times New Roman", serif;
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --base: 18px;               /* Tamaño base grande para 20–75+ años */
+      --touch: 56px;              /* Área táctil mínima */
+      --radio: 14px;
+      --radio-sm: 8px;
+      --sombra: 0 4px 16px rgba(0, 47, 73, 0.08);
+      --trans: 0.25s ease;
+    }
+
+    /* ==========================================================================
+       2. RESET Y BASE
+       ========================================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      font-size: var(--base);
+      line-height: 1.65;
+      color: var(--texto);
+      background: var(--crema);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    *:focus-visible { outline: 4px solid var(--ambar); outline-offset: 3px; border-radius: 4px; }
+
+    h1, h2, h3 { font-family: var(--serif); line-height: 1.2; color: var(--azul-oscuro); }
+    h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); }
+    h2 { font-size: clamp(1.5rem, 5vw, 2rem); margin-bottom: 0.6rem; }
+    h3 { font-size: 1.2rem; }
+    p { margin-bottom: 1rem; }
+    strong { color: var(--azul-oscuro); }
+
+    a { color: var(--azul); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    a:hover { color: var(--ambar); }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); border: 0;
+    }
+    .skip-link {
+      position: absolute; left: 1rem; top: -100px; background: var(--azul-oscuro);
+      color: #fff; padding: 0.75rem 1.25rem; border-radius: 0 0 var(--radio-sm) var(--radio-sm);
+      z-index: 100; transition: top var(--trans); text-decoration: none; font-weight: 700;
+    }
+    .skip-link:focus { top: 0; }
+
+    .container { width: 100%; max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
+
+    section { padding: 2.25rem 0; }
+    section + section { border-top: 1px solid var(--arena); }
+
+    /* ==========================================================================
+       3. CABECERA INSTITUCIONAL
+       ========================================================================== */
+    .topbar { background: var(--blanco); border-bottom: 4px solid var(--azul); }
+    .topbar .container { display: flex; align-items: center; gap: 0.9rem; padding-top: 0.8rem; padding-bottom: 0.8rem; }
+    .logo { flex-shrink: 0; }
+    .topbar-text { font-size: 0.82rem; font-weight: 700; color: var(--azul-oscuro); text-transform: uppercase; letter-spacing: 0.3px; line-height: 1.25; }
+    .topbar-text span { display: block; font-weight: 400; text-transform: none; color: var(--texto-suave); font-size: 0.8rem; letter-spacing: 0; }
+
+    /* ==========================================================================
+       4. HERO
+       ========================================================================== */
+    .hero { background: linear-gradient(160deg, var(--azul-claro) 0%, var(--crema) 100%); text-align: center; }
+    .hero .eyebrow { display: inline-block; background: var(--verde); color: #fff; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 20px; margin-bottom: 1rem; }
+    .hero h1 { margin-bottom: 0.8rem; }
+    .hero .tagline { font-family: var(--serif); font-style: italic; font-size: 1.25rem; color: var(--ambar); margin-bottom: 1.25rem; }
+    .hero p.lead { font-size: 1.05rem; color: var(--texto-suave); max-width: 56ch; margin: 0 auto 1.5rem; }
+
+    .specs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; margin-top: 1.5rem; }
+    .spec { background: var(--blanco); border-radius: var(--radio); padding: 1rem 0.75rem; box-shadow: var(--sombra); }
+    .spec .ico { font-size: 1.4rem; line-height: 1; display: inline-grid; place-items: center; width: 44px; height: 44px; margin: 0 auto; background: var(--verde-claro); border-radius: var(--radio); }
+    .spec .k { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.4px; color: var(--texto-suave); margin-top: 0.35rem; }
+    .spec .v { display: block; font-weight: 700; color: var(--azul-oscuro); font-size: 1.05rem; }
+
+    /* ==========================================================================
+       5. BLOQUES DE CONTENIDO REUTILIZABLES
+       ========================================================================== */
+    .lead-intro { color: var(--texto-suave); margin-bottom: 1.25rem; }
+
+    /* Lista de checks "¿Es para ti?" */
+    .checklist { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.85rem; }
+    .checklist li { display: flex; gap: 0.75rem; align-items: flex-start; background: var(--blanco); border: 1px solid var(--arena); border-radius: var(--radio); padding: 1rem; }
+    .checklist .tick { flex-shrink: 0; width: 28px; height: 28px; background: var(--verde); border-radius: 50%; display: grid; place-items: center; }
+    .checklist .tick svg { width: 16px; height: 16px; fill: #fff; }
+
+    /* Tarjetas de beneficios "qué vas a poder hacer" */
+    .benefits { display: grid; gap: 0.85rem; }
+    .benefit { background: var(--blanco); border-radius: var(--radio); padding: 1.25rem; box-shadow: var(--sombra); }
+    .benefit .ico { font-size: 1.5rem; display: inline-grid; place-items: center; width: 48px; height: 48px; background: var(--azul-claro); border-radius: var(--radio); margin-bottom: 0.5rem; }
+    .benefit h3 { font-family: var(--sans); font-size: 1.05rem; color: var(--azul-oscuro); margin: 0.3rem 0 0.25rem; }
+    .benefit p { margin: 0; font-size: 0.95rem; color: var(--texto-suave); }
+
+    /* PainCafé destacado */
+    .paincafe { background: var(--ambar-claro); border: 2px solid var(--ambar); border-radius: var(--radio); padding: 1.5rem 1.25rem; position: relative; }
+    .paincafe .badge { position: absolute; top: -14px; left: 1.25rem; background: var(--ambar); color: #fff; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 0.3rem 0.8rem; border-radius: 20px; }
+    .paincafe h2 { color: var(--ambar); margin-top: 0.4rem; }
+    .photo-box { background: var(--blanco); border: 1px solid var(--ambar-borde); border-radius: var(--radio); padding: 1.1rem; margin: 1.1rem 0; font-size: 0.97rem; }
+    .photo-box .photo-label { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; color: var(--ambar); }
+    .questions { list-style: none; padding: 0; }
+    .questions li { background: var(--blanco); border-radius: var(--radio-sm); padding: 0.85rem 1rem 0.85rem 2.6rem; margin-bottom: 0.7rem; position: relative; font-weight: 600; font-style: italic; color: var(--azul-oscuro); }
+    .questions li::before { content: "“"; position: absolute; left: 0.7rem; top: 0.4rem; font-family: var(--serif); font-size: 2rem; color: var(--ambar); line-height: 1; }
+
+    /* Mitos y verdades (acordeón accesible) */
+    .myth { background: var(--blanco); border: 1px solid var(--arena); border-radius: var(--radio); margin-bottom: 0.85rem; overflow: hidden; transition: border-color var(--trans); }
+    .myth.is-open { border-color: var(--verde); }
+    .myth-btn { width: 100%; min-height: var(--touch); padding: 1rem 1.15rem; background: none; border: none; cursor: pointer; font-family: var(--sans); font-size: 1.02rem; font-weight: 700; color: var(--azul-oscuro); text-align: left; display: flex; align-items: center; gap: 0.8rem; }
+    .myth-btn:hover { background: var(--azul-claro); }
+    .myth-btn .label { flex: 1; }
+    .myth-btn .tag { display: inline-block; background: #FDE7D9; color: #9A3412; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 4px; margin-right: 0.4rem; }
+    .myth-btn .chev { flex-shrink: 0; width: 22px; height: 22px; fill: var(--azul); transition: transform var(--trans); }
+    .myth-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+    .myth-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--trans); background: var(--verde-claro); }
+    .myth.is-open .myth-panel { grid-template-rows: 1fr; }
+    .myth-panel-inner { overflow: hidden; min-height: 0; padding: 0 1.15rem; transition: padding var(--trans); }
+    .myth.is-open .myth-panel-inner { padding: 1.15rem; }
+    .truth { display: inline-block; background: var(--verde); color: #fff; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 4px; margin-bottom: 0.6rem; }
+    .myth-panel p { margin: 0; }
+
+    /* Resumen de los 4 bloques */
+    .blocks { display: grid; gap: 0.85rem; }
+    .block { background: var(--blanco); border-radius: var(--radio); padding: 1.1rem; box-shadow: var(--sombra); }
+    .block .num { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--texto-suave); }
+    .block .num::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--azul); }
+    .block.b-a .num::before { background: #0067A0; }
+    .block.b-b .num::before { background: #C2410C; }
+    .block.b-c .num::before { background: #0D8A7A; }
+    .block.b-d .num::before { background: var(--violeta); }
+    .block h3 { font-family: var(--sans); margin: 0.15rem 0 0.35rem; color: var(--azul-oscuro); }
+    .block .count { font-size: 0.85rem; font-weight: 700; color: var(--verde); }
+    .block p { margin: 0.4rem 0 0; font-size: 0.95rem; color: var(--texto-suave); }
+
+    /* Cronograma sesión a sesión */
+    .legend { display: flex; flex-wrap: wrap; gap: 0.6rem 1.1rem; margin-bottom: 1.25rem; font-size: 0.88rem; }
+    .legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+    .dot.t { background: var(--azul); }
+    .dot.p { background: var(--verde); }
+
+    .timeline { list-style: none; padding: 0; position: relative; }
+    .timeline::before { content: ""; position: absolute; left: 26px; top: 8px; bottom: 8px; width: 3px; background: var(--arena); }
+    .ses { position: relative; padding-left: 64px; margin-bottom: 1rem; }
+    .ses .marker { position: absolute; left: 12px; top: 4px; width: 32px; height: 32px; border-radius: 50%; background: var(--azul); color: #fff; font-weight: 700; font-size: 0.9rem; display: grid; place-items: center; box-shadow: 0 0 0 4px var(--crema); z-index: 1; }
+    .ses.is-practica .marker { background: var(--verde); }
+    .ses-card { background: var(--blanco); border: 1px solid var(--arena); border-radius: var(--radio); padding: 0.9rem 1rem; }
+    .ses-card.highlight { border: 2px solid var(--ambar); background: var(--ambar-claro); }
+    .ses-top { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem; }
+    .ses-date { font-size: 0.8rem; font-weight: 700; color: var(--texto-suave); background: var(--arena); padding: 0.1rem 0.5rem; border-radius: 4px; }
+    .ses-type { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; padding: 0.12rem 0.5rem; border-radius: 4px; }
+    .ses-type.t { background: var(--azul-claro); color: var(--azul-oscuro); }
+    .ses-type.p { background: var(--verde-claro); color: #0B6B5E; }
+    .ses-title { font-weight: 700; color: var(--azul-oscuro); line-height: 1.3; }
+
+    /* Equipo */
+    .team { display: grid; gap: 1rem; }
+    .member { background: var(--blanco); border: 1px solid var(--arena); border-radius: var(--radio); padding: 1.1rem; display: flex; gap: 1rem; align-items: center; }
+    .avatar { flex-shrink: 0; width: 64px; height: 64px; border-radius: 50%; }
+    .member h3 { font-family: var(--sans); font-size: 1.05rem; margin: 0 0 0.15rem; }
+    .member .role { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: var(--verde); letter-spacing: 0.3px; }
+    .member p { margin: 0.3rem 0 0; font-size: 0.92rem; color: var(--texto-suave); }
+    .equity-note { margin-top: 1.25rem; background: var(--verde-claro); border-radius: var(--radio); padding: 1rem 1.15rem; font-size: 0.95rem; color: #0B6B5E; }
+
+    /* CTA */
+    .cta { background: var(--azul-oscuro); color: #fff; text-align: center; }
+    .cta h2 { color: #fff; }
+    .cta .msg { font-size: 1.3rem; font-weight: 700; color: var(--amarillo); margin: 1rem 0 1.25rem; line-height: 1.35; }
+    .cta p.help { color: #DCEAF2; max-width: 52ch; margin: 0 auto 1.5rem; font-size: 0.98rem; }
+    .cta .step-row { display: grid; gap: 0.7rem; max-width: 460px; margin: 0 auto; text-align: left; }
+    .cta .step { background: rgba(255,255,255,0.08); border-radius: var(--radio); padding: 0.9rem 1rem; display: flex; gap: 0.85rem; align-items: center; }
+    .cta .step .n { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--amarillo); color: var(--azul-oscuro); font-weight: 700; display: grid; place-items: center; }
+    .cta .step span { font-size: 0.97rem; }
+    .cta strong { color: var(--amarillo); }
+
+    /* Pie */
+    footer.site { background: #14110F; color: #B8B2AA; font-size: 0.85rem; padding: 2rem 0; }
+    footer.site strong { color: #fff; }
+    footer.site p { margin-bottom: 0.6rem; }
+    .placeholder { color: var(--amarillo); font-style: italic; }
+
+    /* ==========================================================================
+       6. RESPONSIVE
+       ========================================================================== */
+    @media (min-width: 600px) {
+      .specs { grid-template-columns: repeat(4, 1fr); }
+      .benefits { grid-template-columns: 1fr 1fr; }
+      .blocks { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ==========================================================================
+       7. MOVIMIENTO REDUCIDO
+       ========================================================================== */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Saltar al contenido</a>
+
+  <!-- CABECERA -->
+  <header class="topbar" role="banner">
+    <div class="container">
+      <svg class="logo" width="46" height="46" viewBox="0 0 46 46" role="img" aria-label="SaludMadrid">
+        <rect width="46" height="46" rx="9" fill="#0067A0"/>
+        <path d="M23 11c1.4 0 2.6 1.1 2.6 2.6V20h6.4c1.5 0 2.6 1.2 2.6 2.6S33.5 25 32 25h-6.4v6.4C25.6 32.9 24.4 34 23 34s-2.6-1.1-2.6-2.6V25H14c-1.5 0-2.6-1.2-2.6-2.6S12.5 20 14 20h6.4v-6.4C20.4 12.1 21.6 11 23 11Z" fill="#fff"/>
+      </svg>
+      <div class="topbar-text">
+        Centro de Salud Entrevías
+        <span>SaludMadrid · Dirección Asistencial Sureste</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Programa grupal · Gratuito</span>
+        <h1>Aprende a vivir mejor con el dolor crónico</h1>
+        <p class="tagline">El dolor crónico no significa que tu cuerpo esté dañado. Se puede aprender a vivir mejor.</p>
+        <p class="lead">Si convives con un dolor musculoesquelético desde hace más de tres meses, este grupo de tu centro de salud te ayudará a <strong>entender por qué duele</strong>, a <strong>moverte sin miedo</strong> y a compartir el camino con otras personas que están en tu misma situación.</p>
+
+        <div class="specs" role="list" aria-label="Datos clave del programa">
+          <div class="spec" role="listitem"><span class="ico" aria-hidden="true">🗓️</span><span class="k">Duración</span><span class="v">16 semanas</span></div>
+          <div class="spec" role="listitem"><span class="ico" aria-hidden="true">🕕</span><span class="k">Cuándo</span><span class="v">Viernes 18–19 h</span></div>
+          <div class="spec" role="listitem"><span class="ico" aria-hidden="true">👥</span><span class="k">Grupo</span><span class="v">6–8 personas</span></div>
+          <div class="spec" role="listitem"><span class="ico" aria-hidden="true">💶</span><span class="k">Precio</span><span class="v">Gratuito</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ¿ES PARA TI? -->
+    <section aria-labelledby="para-ti">
+      <div class="container">
+        <h2 id="para-ti">¿Es este programa para ti?</h2>
+        <p class="lead-intro">Está pensado para personas adultas que quieren tomar las riendas de su dolor. Es para ti si:</p>
+        <ul class="checklist">
+          <li>
+            <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></span>
+            <span>Tienes <strong>dolor musculoesquelético</strong> (espalda, cuello, articulaciones, dolor generalizado…) desde hace <strong>más de 3 meses</strong>.</span>
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></span>
+            <span>Quieres <strong>entender tu dolor</strong> y aprender a manejarlo en tu día a día, sin depender solo de pastillas o pruebas.</span>
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></span>
+            <span>Te apetece formar parte de un <strong>grupo pequeño</strong> y de apoyo, con profesionales de tu propio centro de salud.</span>
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></span>
+            <span>Puedes asistir los <strong>viernes de 18:00 a 19:00</strong>, del 4 de septiembre al 18 de diciembre de 2026.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- QUÉ VAS A PODER HACER -->
+    <section style="background: var(--azul-claro);" aria-labelledby="beneficios">
+      <div class="container">
+        <h2 id="beneficios">Lo que vas a poder hacer</h2>
+        <p class="lead-intro">A lo largo de las 16 sesiones, paso a paso y a tu ritmo:</p>
+        <div class="benefits">
+          <div class="benefit"><span class="ico" aria-hidden="true">🧠</span><h3>Entender tu dolor</h3><p>Descubrir por qué duele y por qué el dolor crónico es una alarma demasiado sensible, no una señal de daño.</p></div>
+          <div class="benefit"><span class="ico" aria-hidden="true">🌿</span><h3>Calmar la alarma</h3><p>Aprender estrategias de afrontamiento, regulación emocional y un mejor descanso para los días difíciles.</p></div>
+          <div class="benefit"><span class="ico" aria-hidden="true">🚶</span><h3>Moverte sin miedo</h3><p>Recuperar poco a poco actividades que habías dejado, con un plan de movimiento seguro y progresivo.</p></div>
+          <div class="benefit"><span class="ico" aria-hidden="true">🤝</span><h3>No estar solo/a</h3><p>Compartir experiencias con personas que te entienden y construir tu propio plan para mantener las mejoras.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAINCAFÉ -->
+    <section aria-labelledby="paincafe">
+      <div class="container">
+        <div class="paincafe">
+          <span class="badge">Así empezamos · Sesión 1</span>
+          <h2 id="paincafe">Nuestro PainCafé de bienvenida</h2>
+          <p>Empezamos de una forma diferente: <strong>sin batas ni camillas</strong>. Nos sentamos juntos a tomar un café o una infusión, en un ambiente tranquilo y seguro, para conocernos sin prisa.</p>
+          <div class="photo-box">
+            <span class="photo-label"><span aria-hidden="true">📷</span> Actividad “Photovoice” — tu voz en una foto</span>
+            <p style="margin:0.5rem 0 0;">Antes de venir, piensa en <strong>una fotografía hecha por ti</strong> que represente qué es el dolor en tu vida. No buscamos arte, sino tu mirada. Por ejemplo: <em>“una mochila muy pesada que cargo cada día”</em> o <em>“unas zapatillas de deporte que ya no uso”</em>. No hay respuestas correctas ni incorrectas.</p>
+          </div>
+          <p style="font-weight:700; color: var(--ambar); margin-bottom:0.6rem;">Charlaremos en torno a dos preguntas:</p>
+          <ul class="questions">
+            <li>¿Qué supone para ti convivir con el dolor crónico en tu día a día?</li>
+            <li>¿Qué necesitas y qué crees que te ayudaría a vivir mejor?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MITOS Y VERDADES -->
+    <section style="background: var(--azul-claro);" aria-labelledby="mitos">
+      <div class="container">
+        <h2 id="mitos">Mitos y verdades sobre el dolor</h2>
+        <p class="lead-intro">Pulsa en cada frase para ver qué dice la ciencia hoy. Perder estos miedos es el primer paso.</p>
+
+        <div class="myth">
+          <button type="button" class="myth-btn" aria-expanded="false" aria-controls="m1">
+            <span class="label"><span class="tag">Mito</span>Si me duele al moverme, me estoy haciendo daño.</span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div id="m1" class="myth-panel" role="region" aria-label="Respuesta al mito 1">
+            <div class="myth-panel-inner">
+              <span class="truth">La realidad</span>
+              <p>El dolor crónico funciona como una <strong>alarma demasiado sensible</strong>. Igual que un detector de humo que pita con una tostada quemada sin que haya fuego, tu cuerpo avisa ante movimientos que en realidad son seguros. Dolor no es lo mismo que daño.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="myth">
+          <button type="button" class="myth-btn" aria-expanded="false" aria-controls="m2">
+            <span class="label"><span class="tag">Mito</span>El dolor crónico ya no tiene solución.</span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div id="m2" class="myth-panel" role="region" aria-label="Respuesta al mito 2">
+            <div class="myth-panel-inner">
+              <span class="truth">La realidad</span>
+              <p>El sistema nervioso tiene <strong>neuroplasticidad</strong>: puede aprender, pero también desaprender. Con educación, manejo del estrés y movimiento progresivo, se puede ir <strong>bajando el volumen de esa alarma</strong> y recuperar calidad de vida.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="myth">
+          <button type="button" class="myth-btn" aria-expanded="false" aria-controls="m3">
+            <span class="label"><span class="tag">Mito</span>Para recuperarme tengo que guardar reposo.</span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div id="m3" class="myth-panel" role="region" aria-label="Respuesta al mito 3">
+            <div class="myth-panel-inner">
+              <span class="truth">La realidad</span>
+              <p>El reposo prolongado <strong>debilita</strong> y suele aumentar la sensibilidad al dolor. El <strong>movimiento suave, dosificado y progresivo</strong> es uno de los tratamientos más eficaces que existen. Aquí aprenderás a hacerlo con seguridad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOS 4 BLOQUES -->
+    <section aria-labelledby="bloques">
+      <div class="container">
+        <h2 id="bloques">El programa, en 4 etapas</h2>
+        <p class="lead-intro">Las 16 sesiones se organizan en cuatro bloques que se van intercalando para avanzar de forma equilibrada:</p>
+        <div class="blocks">
+          <div class="block b-a"><span class="num">Bloque A</span><h3>Comprender el dolor</h3><span class="count">6 sesiones</span><p>Entender cómo funciona la alarma del cuerpo y por qué dolor no significa daño.</p></div>
+          <div class="block b-b"><span class="num">Bloque B</span><h3>Regular y afrontar</h3><span class="count">4 sesiones</span><p>Herramientas para las emociones, el estrés, el sueño y los días de recaída.</p></div>
+          <div class="block b-c"><span class="num">Bloque C</span><h3>Moverse y exponerse</h3><span class="count">3 sesiones</span><p>Recuperar el movimiento y las actividades temidas, paso a paso y sin miedo.</p></div>
+          <div class="block b-d"><span class="num">Bloque D</span><h3>Sostener el cambio</h3><span class="count">3 sesiones</span><p>Crear tu propio plan para mantener las mejoras una vez termine el grupo.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CRONOGRAMA SESIÓN A SESIÓN -->
+    <section style="background: var(--azul-claro);" aria-labelledby="cronograma">
+      <div class="container">
+        <h2 id="cronograma">Sesión a sesión</h2>
+        <p class="lead-intro">Un encuentro por semana, los viernes de 18:00 a 19:00. Estas son las 16 sesiones de la edición de otoño de 2026:</p>
+        <div class="legend" aria-hidden="true">
+          <span><span class="dot t"></span> Sesión teórica (charla y debate)</span>
+          <span><span class="dot p"></span> Sesión práctica (entrenamos juntos)</span>
+        </div>
+        <ol class="timeline" id="timeline">
+          <!-- Se generan con JS desde los datos; si JS falla, ver versión estática debajo -->
+        </ol>
+        <noscript>
+          <p>Activa JavaScript para ver el calendario detallado, o pide el folleto del programa en tu centro de salud.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- EQUIPO -->
+    <section aria-labelledby="equipo">
+      <div class="container">
+        <h2 id="equipo">El equipo que te acompaña</h2>
+        <p class="lead-intro">Profesionales de tu Centro de Salud Entrevías y colaboradores comunitarios:</p>
+        <div class="team" id="team"></div>
+        <p class="equity-note">🌍 Este programa se imparte con <strong>perspectiva de equidad y de género</strong>: tenemos en cuenta cómo el dolor se vive y se atiende de forma distinta en mujeres y hombres, y cuidamos un acceso justo para todas las personas del barrio.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" aria-labelledby="apuntarse">
+      <div class="container">
+        <h2 id="apuntarse">¿Te gustaría apuntarte?</h2>
+        <p class="msg">Habla con tu médico/a o fisioterapeuta en tu próxima consulta en el centro</p>
+        <p class="help">No necesitas rellenar formularios ni dar tus datos por internet. Las plazas son limitadas (6 a 8 personas) para poder cuidar bien de cada persona.</p>
+        <div class="step-row">
+          <div class="step"><span class="n" aria-hidden="true">1</span><span>Pide cita con tu médico/a o fisioterapeuta de Entrevías.</span></div>
+          <div class="step"><span class="n" aria-hidden="true">2</span><span>Coméntale que te interesa el <strong>grupo de dolor crónico</strong>.</span></div>
+          <div class="step"><span class="n" aria-hidden="true">3</span><span>Si encaja contigo, te incluirá en la próxima edición. ¡Te esperamos!</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site" role="contentinfo">
+    <div class="container">
+      <p><strong>Centro de Salud Entrevías</strong> · SaludMadrid · Dirección Asistencial Sureste (SERMAS)</p>
+      <p>Calle Campiña, 1 · 28053 Madrid (Puente de Vallecas) · Teléfono: <a href="tel:+34915073030" style="color:#DCEAF2;">915 073 030</a></p>
+      <p>Programa de Educación para la Salud basado en el protocolo POBTE, adaptado a las directrices de validación COVAM de la Comunidad de Madrid, con perspectiva de equidad y género. En colaboración con la Fundación Paincorp.</p>
+      <p style="margin-top:1rem;"><a href="#main" style="color:#DCEAF2;">↑ Volver arriba</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // ====== DATOS DEL PROGRAMA (editar aquí si cambian) ======
+    // Las 16 sesiones en orden cronológico. type: "t" teórica · "p" práctica.
+    var SESIONES = [
+      { n: 1,  fecha: "Vie 4 sep",  type: "p", titulo: "PainCafé de bienvenida", destacada: true },
+      { n: 2,  fecha: "Vie 11 sep", type: "t", titulo: "Dolor no es daño: reconceptualización" },
+      { n: 3,  fecha: "Vie 18 sep", type: "t", titulo: "Neurofisiología y neuroplasticidad" },
+      { n: 4,  fecha: "Vie 25 sep", type: "p", titulo: "Imaginería motora: moverse con la mente" },
+      { n: 5,  fecha: "Vie 2 oct",  type: "p", titulo: "Recaídas y estrategias de afrontamiento" },
+      { n: 6,  fecha: "Vie 9 oct",  type: "p", titulo: "Atención al cuerpo y mapa cerebral" },
+      { n: 7,  fecha: "Vie 16 oct", type: "t", titulo: "Aprendizaje y miedo a moverse" },
+      { n: 8,  fecha: "Vie 23 oct", type: "p", titulo: "Exposición graduada: tu jerarquía de retos" },
+      { n: 9,  fecha: "Vie 30 oct", type: "p", titulo: "Emociones y cómo regularlas" },
+      { n: 10, fecha: "Vie 6 nov",  type: "p", titulo: "Contexto, expectativas y creencias" },
+      { n: 11, fecha: "Vie 13 nov", type: "p", titulo: "Diseña tu propio plan de exposición" },
+      { n: 12, fecha: "Vie 20 nov", type: "t", titulo: "Sueño y autorregulación" },
+      { n: 13, fecha: "Vie 27 nov", type: "p", titulo: "Actividad física graduada" },
+      { n: 14, fecha: "Vie 4 dic",  type: "p", titulo: "Analizar las barreras de tu día a día" },
+      { n: 15, fecha: "Vie 11 dic", type: "p", titulo: "Variabilidad: moverse de muchas formas" },
+      { n: 16, fecha: "Vie 18 dic", type: "p", titulo: "Síntesis y tu proyecto de continuidad" }
+    ];
+
+    var EQUIPO = [
+      { nombre: "Raúl Ferrer-Peña", rol: "Fisioterapeuta de A. Primaria", bio: "Coordina el programa y guía el movimiento seguro. Fisioterapeuta del CS Entrevías.", color: "#0067A0" },
+      { nombre: "Dra. Belén de Llama Arauz", rol: "Medicina de Familia", bio: "Aporta la visión clínica integral y el seguimiento de salud de cada participante.", color: "#0D8A7A" },
+      { nombre: "Patricia Moreno Carrero", rol: "Fisioterapeuta", bio: "Colabora en el abordaje activo del dolor y las estrategias de ejercicio.", color: "#C2410C" },
+      { nombre: "Dra. Manuela Monleón Just", rol: "Enfermera · Doctora en Enfermería", bio: "Impulsora del PainCafé. Experta en autocuidado y apoyo comunitario.", color: "#7C3AED" },
+      { nombre: "Fundación Paincorp", rol: "Agente comunitario", bio: "Francisco Gurdiel y Silvia Di Bonaventura conectan el grupo con el barrio.", color: "#44403C" }
+    ];
+
+    function avatarSVG(color) {
+      return '<svg class="avatar" viewBox="0 0 100 100" role="img" aria-hidden="true">'
+        + '<circle cx="50" cy="50" r="50" fill="#EFE9E1"/>'
+        + '<circle cx="50" cy="40" r="19" fill="' + color + '"/>'
+        + '<path d="M18 86c0-16 16-26 32-26s32 10 32 26z" fill="' + color + '"/></svg>';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // --- Cronograma ---
+      var tl = document.getElementById('timeline');
+      if (tl) {
+        SESIONES.forEach(function (s) {
+          var li = document.createElement('li');
+          li.className = 'ses ' + (s.type === 'p' ? 'is-practica' : 'is-teorica');
+          var typeLabel = s.type === 't' ? 'Teórica' : 'Práctica';
+          li.innerHTML =
+            '<span class="marker" aria-hidden="true">' + s.n + '</span>' +
+            '<div class="ses-card' + (s.destacada ? ' highlight' : '') + '">' +
+              '<div class="ses-top">' +
+                '<span class="ses-date">' + s.fecha + '</span>' +
+                '<span class="ses-type ' + s.type + '">' + typeLabel + '</span>' +
+              '</div>' +
+              '<div class="ses-title"><span class="sr-only">Sesión ' + s.n + ': </span>' + s.titulo + '</div>' +
+            '</div>';
+          tl.appendChild(li);
+        });
+      }
+
+      // --- Equipo ---
+      var team = document.getElementById('team');
+      if (team) {
+        EQUIPO.forEach(function (m) {
+          var div = document.createElement('div');
+          div.className = 'member';
+          div.innerHTML = avatarSVG(m.color) +
+            '<div><h3>' + m.nombre + '</h3>' +
+            '<div class="role">' + m.rol + '</div>' +
+            '<p>' + m.bio + '</p></div>';
+          team.appendChild(div);
+        });
+      }
+
+      // --- Mitos y verdades (acordeón accesible) ---
+      var btns = document.querySelectorAll('.myth-btn');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var open = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!open));
+          btn.closest('.myth').classList.toggle('is-open', !open);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
