@@ -11,6 +11,11 @@
   <meta property="og:title" content="Aprende a vivir mejor con el dolor crónico — CS Entrevías">
   <meta property="og:description" content="Programa grupal gratuito en tu centro de salud. El dolor crónico no significa daño: se puede aprender a vivir mejor.">
   <meta property="og:locale" content="es_ES">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 46'><rect width='46' height='46' rx='9' fill='%230067A0'/><path d='M23 11c1.4 0 2.6 1.1 2.6 2.6V20h6.4c1.5 0 2.6 1.2 2.6 2.6S33.5 25 32 25h-6.4v6.4C25.6 32.9 24.4 34 23 34s-2.6-1.1-2.6-2.6V25H14c-1.5 0-2.6-1.2-2.6-2.6S12.5 20 14 20h6.4v-6.4C20.4 12.1 21.6 11 23 11Z' fill='%23fff'/></svg>">
+  <!-- Progressive enhancement: marca cuanto antes que hay JS para evitar el parpadeo del acordeón.
+       SIN JS los paneles de mitos quedan abiertos y todo el contenido es legible. -->
+  <script>document.documentElement.classList.add('js');</script>
   <style>
     /* ==========================================================================
        1. TOKENS DE DISEÑO — Paleta híbrida: confianza institucional + calidez
@@ -24,6 +29,9 @@
       --ambar-borde: #EAD3C2;      /* Borde sutil tono ámbar */
       --verde: #0D8A7A;           /* Cian-verde: movimiento, salud activa */
       --verde-claro: #E6F5F2;
+      --teal-paincorp: #0DB1A4;   /* Teal de marca Fundación Paincorp (puente con SERMAS) */
+      --teal-oscuro: #004A59;     /* Teal oscuro Paincorp — texto/acento legible */
+      --teal-cobrand: #E4F3F0;    /* Tinte teal para el degradado co-marca del hero */
       --violeta: #7C3AED;          /* Acento bloque D / docente */
       --crema: #FAF7F2;           /* Fondo general cálido (no clínico) */
       --blanco: #FFFFFF;
@@ -89,16 +97,18 @@
     /* ==========================================================================
        3. CABECERA INSTITUCIONAL
        ========================================================================== */
-    .topbar { background: var(--blanco); border-bottom: 4px solid var(--azul); }
+    .topbar { background: var(--blanco); border-style: solid; border-width: 0 0 4px;
+      border-image: linear-gradient(90deg, var(--azul) 0 58%, var(--teal-paincorp) 58% 100%) 1; }
     .topbar .container { display: flex; align-items: center; gap: 0.9rem; padding-top: 0.8rem; padding-bottom: 0.8rem; }
     .logo { flex-shrink: 0; }
     .topbar-text { font-size: 0.82rem; font-weight: 700; color: var(--azul-oscuro); text-transform: uppercase; letter-spacing: 0.3px; line-height: 1.25; }
     .topbar-text span { display: block; font-weight: 400; text-transform: none; color: var(--texto-suave); font-size: 0.8rem; letter-spacing: 0; }
+    .topbar-text .cobrand { color: var(--teal-oscuro); font-weight: 700; margin-top: 1px; }
 
     /* ==========================================================================
        4. HERO
        ========================================================================== */
-    .hero { background: linear-gradient(160deg, var(--azul-claro) 0%, var(--crema) 100%); text-align: center; }
+    .hero { background: linear-gradient(160deg, var(--azul-claro) 0%, var(--teal-cobrand) 52%, var(--crema) 100%); text-align: center; }
     .hero .eyebrow { display: inline-block; background: var(--verde); color: #fff; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 20px; margin-bottom: 1rem; }
     .hero h1 { margin-bottom: 0.8rem; }
     .hero .tagline { font-family: var(--serif); font-style: italic; font-size: 1.25rem; color: var(--ambar); margin-bottom: 1.25rem; }
@@ -147,10 +157,13 @@
     .myth-btn .tag { display: inline-block; background: #FDE7D9; color: #9A3412; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 4px; margin-right: 0.4rem; }
     .myth-btn .chev { flex-shrink: 0; width: 22px; height: 22px; fill: var(--azul); transition: transform var(--trans); }
     .myth-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
-    .myth-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--trans); background: var(--verde-claro); }
-    .myth.is-open .myth-panel { grid-template-rows: 1fr; }
-    .myth-panel-inner { overflow: hidden; min-height: 0; padding: 0 1.15rem; transition: padding var(--trans); }
-    .myth.is-open .myth-panel-inner { padding: 1.15rem; }
+    /* Sin JS: paneles ABIERTOS (todo el contenido es legible). Con JS (html.js): colapsados salvo .is-open. */
+    .myth-panel { display: grid; grid-template-rows: 1fr; transition: grid-template-rows var(--trans); background: var(--verde-claro); }
+    .myth-panel-inner { overflow: hidden; min-height: 0; padding: 1.15rem; transition: padding var(--trans); }
+    html.js .myth-panel { grid-template-rows: 0fr; }
+    html.js .myth-panel-inner { padding: 0 1.15rem; }
+    html.js .myth.is-open .myth-panel { grid-template-rows: 1fr; }
+    html.js .myth.is-open .myth-panel-inner { padding: 1.15rem; }
     .truth { display: inline-block; background: var(--verde); color: #fff; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 4px; margin-bottom: 0.6rem; }
     .myth-panel p { margin: 0; }
 
@@ -161,7 +174,7 @@
     .block .num::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--azul); }
     .block.b-a .num::before { background: #0067A0; }
     .block.b-b .num::before { background: #C2410C; }
-    .block.b-c .num::before { background: #0D8A7A; }
+    .block.b-c .num::before { background: var(--teal-paincorp); }
     .block.b-d .num::before { background: var(--violeta); }
     .block h3 { font-family: var(--sans); margin: 0.15rem 0 0.35rem; color: var(--azul-oscuro); }
     .block .count { font-size: 0.85rem; font-weight: 700; color: var(--verde); }
@@ -211,6 +224,8 @@
     /* Pie */
     footer.site { background: #14110F; color: #B8B2AA; font-size: 0.85rem; padding: 2rem 0; }
     footer.site strong { color: #fff; }
+    .footer-org-sermas { color: #7FC0E4; font-weight: 700; }
+    .footer-org-paincorp { color: #4FD0C0; font-weight: 700; }
     footer.site p { margin-bottom: 0.6rem; }
     .placeholder { color: var(--amarillo); font-style: italic; }
 
@@ -230,6 +245,37 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition: none !important; }
     }
+
+    /* ==========================================================================
+       8. ROBUSTEZ: texto largo y alto contraste forzado
+       ========================================================================== */
+    /* Nombres y textos largos no rompen la maqueta ni desbordan tarjetas */
+    .ses-title, .member h3, .member p, .member .role, .benefit p, .block p,
+    .questions li, .checklist li span, .spec .v { overflow-wrap: break-word; hyphens: auto; }
+    .member > div, .ses-card, .benefit, .block { min-width: 0; }
+
+    /* Alto contraste forzado (Windows): lo que se distingue por color conserva forma */
+    @media (forced-colors: active) {
+      .tick, .dot, .ses .marker, .spec .ico, .benefit .ico,
+      .block .num::before { border: 1px solid CanvasText; }
+      .myth.is-open { border-color: Highlight; }
+    }
+
+    /* ==========================================================================
+       9. IMPRESIÓN (folleto imprimible para el centro de salud)
+       ========================================================================== */
+    @media print {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { background: #fff; color: #000; font-size: 12pt; }
+      .hero { background: none !important; }
+      .skip-link { display: none; }
+      section, .paincafe, .ses, .member, .benefit, .block, .spec { break-inside: avoid; }
+      /* En papel, las respuestas de los mitos van SIEMPRE visibles */
+      html.js .myth-panel { grid-template-rows: 1fr !important; }
+      html.js .myth-panel-inner { padding: 1.15rem !important; }
+      .myth-btn .chev { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -245,6 +291,7 @@
       <div class="topbar-text">
         Centro de Salud Entrevías
         <span>SaludMadrid · Dirección Asistencial Sureste</span>
+        <span class="cobrand">junto a la Fundación Paincorp</span>
       </div>
     </div>
   </header>
@@ -398,12 +445,121 @@
           <span><span class="dot t"></span> Sesión teórica (charla y debate)</span>
           <span><span class="dot p"></span> Sesión práctica (entrenamos juntos)</span>
         </div>
-        <ol class="timeline" id="timeline">
-          <!-- Se generan con JS desde los datos; si JS falla, ver versión estática debajo -->
+        <!-- 16 sesiones (edición otoño 2026). Contenido ESTÁTICO: se ve sin JavaScript. Editar aquí si cambian. -->
+        <ol class="timeline">
+          <li class="ses is-practica">
+            <span class="marker" aria-hidden="true">1</span>
+            <div class="ses-card highlight">
+              <div class="ses-top"><span class="ses-date">Vie 4 sep</span><span class="ses-type p">Práctica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 1: </span>PainCafé de bienvenida</div>
+            </div>
+          </li>
+          <li class="ses is-teorica">
+            <span class="marker" aria-hidden="true">2</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 11 sep</span><span class="ses-type t">Teórica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 2: </span>Dolor no es daño: reconceptualización</div>
+            </div>
+          </li>
+          <li class="ses is-teorica">
+            <span class="marker" aria-hidden="true">3</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 18 sep</span><span class="ses-type t">Teórica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 3: </span>Neurofisiología y neuroplasticidad</div>
+            </div>
+          </li>
+          <li class="ses is-practica">
+            <span class="marker" aria-hidden="true">4</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 25 sep</span><span class="ses-type p">Práctica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 4: </span>Imaginería motora: moverse con la mente</div>
+            </div>
+          </li>
+          <li class="ses is-practica">
+            <span class="marker" aria-hidden="true">5</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 2 oct</span><span class="ses-type p">Práctica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 5: </span>Recaídas y estrategias de afrontamiento</div>
+            </div>
+          </li>
+          <li class="ses is-practica">
+            <span class="marker" aria-hidden="true">6</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 9 oct</span><span class="ses-type p">Práctica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 6: </span>Atención al cuerpo y mapa cerebral</div>
+            </div>
+          </li>
+          <li class="ses is-teorica">
+            <span class="marker" aria-hidden="true">7</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 16 oct</span><span class="ses-type t">Teórica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 7: </span>Aprendizaje y miedo a moverse</div>
+            </div>
+          </li>
+          <li class="ses is-practica">
+            <span class="marker" aria-hidden="true">8</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 23 oct</span><span class="ses-type p">Práctica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 8: </span>Exposición graduada: tu jerarquía de retos</div>
+            </div>
+          </li>
+          <li class="ses is-practica">
+            <span class="marker" aria-hidden="true">9</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 30 oct</span><span class="ses-type p">Práctica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 9: </span>Emociones y cómo regularlas</div>
+            </div>
+          </li>
+          <li class="ses is-practica">
+            <span class="marker" aria-hidden="true">10</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 6 nov</span><span class="ses-type p">Práctica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 10: </span>Contexto, expectativas y creencias</div>
+            </div>
+          </li>
+          <li class="ses is-practica">
+            <span class="marker" aria-hidden="true">11</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 13 nov</span><span class="ses-type p">Práctica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 11: </span>Diseña tu propio plan de exposición</div>
+            </div>
+          </li>
+          <li class="ses is-teorica">
+            <span class="marker" aria-hidden="true">12</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 20 nov</span><span class="ses-type t">Teórica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 12: </span>Sueño y autorregulación</div>
+            </div>
+          </li>
+          <li class="ses is-practica">
+            <span class="marker" aria-hidden="true">13</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 27 nov</span><span class="ses-type p">Práctica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 13: </span>Actividad física graduada</div>
+            </div>
+          </li>
+          <li class="ses is-practica">
+            <span class="marker" aria-hidden="true">14</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 4 dic</span><span class="ses-type p">Práctica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 14: </span>Analizar las barreras de tu día a día</div>
+            </div>
+          </li>
+          <li class="ses is-practica">
+            <span class="marker" aria-hidden="true">15</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 11 dic</span><span class="ses-type p">Práctica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 15: </span>Variabilidad: moverse de muchas formas</div>
+            </div>
+          </li>
+          <li class="ses is-practica">
+            <span class="marker" aria-hidden="true">16</span>
+            <div class="ses-card">
+              <div class="ses-top"><span class="ses-date">Vie 18 dic</span><span class="ses-type p">Práctica</span></div>
+              <div class="ses-title"><span class="sr-only">Sesión 16: </span>Síntesis y tu proyecto de continuidad</div>
+            </div>
+          </li>
         </ol>
-        <noscript>
-          <p>Activa JavaScript para ver el calendario detallado, o pide el folleto del programa en tu centro de salud.</p>
-        </noscript>
       </div>
     </section>
 
@@ -412,7 +568,29 @@
       <div class="container">
         <h2 id="equipo">El equipo que te acompaña</h2>
         <p class="lead-intro">Profesionales de tu Centro de Salud Entrevías y colaboradores comunitarios:</p>
-        <div class="team" id="team"></div>
+        <!-- Equipo. Contenido ESTÁTICO: se ve sin JavaScript. Editar aquí si cambia. -->
+        <div class="team">
+          <div class="member">
+            <svg class="avatar" viewBox="0 0 100 100" role="img" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#EFE9E1"/><circle cx="50" cy="40" r="19" fill="#0067A0"/><path d="M18 86c0-16 16-26 32-26s32 10 32 26z" fill="#0067A0"/></svg>
+            <div><h3>Dr. Raúl Ferrer-Peña</h3><div class="role">Fisioterapeuta de A. Primaria</div><p>Coordina el programa y guía el movimiento seguro. Fisioterapeuta del CS Entrevías.</p></div>
+          </div>
+          <div class="member">
+            <svg class="avatar" viewBox="0 0 100 100" role="img" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#EFE9E1"/><circle cx="50" cy="40" r="19" fill="#0D8A7A"/><path d="M18 86c0-16 16-26 32-26s32 10 32 26z" fill="#0D8A7A"/></svg>
+            <div><h3>Dra. Belén de Llama Arauz</h3><div class="role">Medicina de Familia</div><p>Aporta la visión clínica integral y el seguimiento de salud de cada participante.</p></div>
+          </div>
+          <div class="member">
+            <svg class="avatar" viewBox="0 0 100 100" role="img" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#EFE9E1"/><circle cx="50" cy="40" r="19" fill="#C2410C"/><path d="M18 86c0-16 16-26 32-26s32 10 32 26z" fill="#C2410C"/></svg>
+            <div><h3>Patricia Moreno Carrero</h3><div class="role">Fisioterapeuta</div><p>Colabora en el abordaje activo del dolor y las estrategias de ejercicio.</p></div>
+          </div>
+          <div class="member">
+            <svg class="avatar" viewBox="0 0 100 100" role="img" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#EFE9E1"/><circle cx="50" cy="40" r="19" fill="#7C3AED"/><path d="M18 86c0-16 16-26 32-26s32 10 32 26z" fill="#7C3AED"/></svg>
+            <div><h3>Dra. Manuela Monleón Just</h3><div class="role">Enfermera · Doctora en Enfermería</div><p>Impulsora del PainCafé. Experta en autocuidado y apoyo comunitario.</p></div>
+          </div>
+          <div class="member">
+            <svg class="avatar" viewBox="0 0 100 100" role="img" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#EFE9E1"/><circle cx="50" cy="40" r="19" fill="#0DB1A4"/><path d="M18 86c0-16 16-26 32-26s32 10 32 26z" fill="#0DB1A4"/></svg>
+            <div><h3>Fundación Paincorp</h3><div class="role">Agente comunitario</div><p>Francisco Gurdiel y Silvia Di Bonaventura conectan el grupo con el barrio.</p></div>
+          </div>
+        </div>
         <p class="equity-note">🌍 Este programa se imparte con <strong>perspectiva de equidad y de género</strong>: tenemos en cuenta cómo el dolor se vive y se atiende de forma distinta en mujeres y hombres, y cuidamos un acceso justo para todas las personas del barrio.</p>
       </div>
     </section>
@@ -421,10 +599,10 @@
     <section class="cta" aria-labelledby="apuntarse">
       <div class="container">
         <h2 id="apuntarse">¿Te gustaría apuntarte?</h2>
-        <p class="msg">Habla con tu médico/a o fisioterapeuta en tu próxima consulta en el centro</p>
+        <p class="msg">Habla con tu médico/a, enfermero/a o fisioterapeuta en tu próxima consulta en el centro</p>
         <p class="help">No necesitas rellenar formularios ni dar tus datos por internet. Las plazas son limitadas (6 a 8 personas) para poder cuidar bien de cada persona.</p>
         <div class="step-row">
-          <div class="step"><span class="n" aria-hidden="true">1</span><span>Pide cita con tu médico/a o fisioterapeuta de Entrevías.</span></div>
+          <div class="step"><span class="n" aria-hidden="true">1</span><span>Pide cita con tu médico/a, enfermero/a o fisioterapeuta de Entrevías.</span></div>
           <div class="step"><span class="n" aria-hidden="true">2</span><span>Coméntale que te interesa el <strong>grupo de dolor crónico</strong>.</span></div>
           <div class="step"><span class="n" aria-hidden="true">3</span><span>Si encaja contigo, te incluirá en la próxima edición. ¡Te esperamos!</span></div>
         </div>
@@ -435,85 +613,17 @@
 
   <footer class="site" role="contentinfo">
     <div class="container">
-      <p><strong>Centro de Salud Entrevías</strong> · SaludMadrid · Dirección Asistencial Sureste (SERMAS)</p>
+      <p><strong>Centro de Salud Entrevías</strong> · <span class="footer-org-sermas">SaludMadrid</span> · Dirección Asistencial Sureste (SERMAS)</p>
       <p>Calle Campiña, 1 · 28053 Madrid (Puente de Vallecas) · Teléfono: <a href="tel:+34915073030" style="color:#DCEAF2;">915 073 030</a></p>
-      <p>Programa de Educación para la Salud basado en el protocolo POBTE, adaptado a las directrices de validación COVAM de la Comunidad de Madrid, con perspectiva de equidad y género. En colaboración con la Fundación Paincorp.</p>
+      <p>Programa de Educación para la Salud basado en el protocolo POBTE, adaptado a las directrices de validación COVAM de la Comunidad de Madrid, con perspectiva de equidad y género. En colaboración con la <span class="footer-org-paincorp">Fundación Paincorp</span>.</p>
       <p style="margin-top:1rem;"><a href="#main" style="color:#DCEAF2;">↑ Volver arriba</a></p>
     </div>
   </footer>
 
   <script>
-    // ====== DATOS DEL PROGRAMA (editar aquí si cambian) ======
-    // Las 16 sesiones en orden cronológico. type: "t" teórica · "p" práctica.
-    var SESIONES = [
-      { n: 1,  fecha: "Vie 4 sep",  type: "p", titulo: "PainCafé de bienvenida", destacada: true },
-      { n: 2,  fecha: "Vie 11 sep", type: "t", titulo: "Dolor no es daño: reconceptualización" },
-      { n: 3,  fecha: "Vie 18 sep", type: "t", titulo: "Neurofisiología y neuroplasticidad" },
-      { n: 4,  fecha: "Vie 25 sep", type: "p", titulo: "Imaginería motora: moverse con la mente" },
-      { n: 5,  fecha: "Vie 2 oct",  type: "p", titulo: "Recaídas y estrategias de afrontamiento" },
-      { n: 6,  fecha: "Vie 9 oct",  type: "p", titulo: "Atención al cuerpo y mapa cerebral" },
-      { n: 7,  fecha: "Vie 16 oct", type: "t", titulo: "Aprendizaje y miedo a moverse" },
-      { n: 8,  fecha: "Vie 23 oct", type: "p", titulo: "Exposición graduada: tu jerarquía de retos" },
-      { n: 9,  fecha: "Vie 30 oct", type: "p", titulo: "Emociones y cómo regularlas" },
-      { n: 10, fecha: "Vie 6 nov",  type: "p", titulo: "Contexto, expectativas y creencias" },
-      { n: 11, fecha: "Vie 13 nov", type: "p", titulo: "Diseña tu propio plan de exposición" },
-      { n: 12, fecha: "Vie 20 nov", type: "t", titulo: "Sueño y autorregulación" },
-      { n: 13, fecha: "Vie 27 nov", type: "p", titulo: "Actividad física graduada" },
-      { n: 14, fecha: "Vie 4 dic",  type: "p", titulo: "Analizar las barreras de tu día a día" },
-      { n: 15, fecha: "Vie 11 dic", type: "p", titulo: "Variabilidad: moverse de muchas formas" },
-      { n: 16, fecha: "Vie 18 dic", type: "p", titulo: "Síntesis y tu proyecto de continuidad" }
-    ];
-
-    var EQUIPO = [
-      { nombre: "Raúl Ferrer-Peña", rol: "Fisioterapeuta de A. Primaria", bio: "Coordina el programa y guía el movimiento seguro. Fisioterapeuta del CS Entrevías.", color: "#0067A0" },
-      { nombre: "Dra. Belén de Llama Arauz", rol: "Medicina de Familia", bio: "Aporta la visión clínica integral y el seguimiento de salud de cada participante.", color: "#0D8A7A" },
-      { nombre: "Patricia Moreno Carrero", rol: "Fisioterapeuta", bio: "Colabora en el abordaje activo del dolor y las estrategias de ejercicio.", color: "#C2410C" },
-      { nombre: "Dra. Manuela Monleón Just", rol: "Enfermera · Doctora en Enfermería", bio: "Impulsora del PainCafé. Experta en autocuidado y apoyo comunitario.", color: "#7C3AED" },
-      { nombre: "Fundación Paincorp", rol: "Agente comunitario", bio: "Francisco Gurdiel y Silvia Di Bonaventura conectan el grupo con el barrio.", color: "#44403C" }
-    ];
-
-    function avatarSVG(color) {
-      return '<svg class="avatar" viewBox="0 0 100 100" role="img" aria-hidden="true">'
-        + '<circle cx="50" cy="50" r="50" fill="#EFE9E1"/>'
-        + '<circle cx="50" cy="40" r="19" fill="' + color + '"/>'
-        + '<path d="M18 86c0-16 16-26 32-26s32 10 32 26z" fill="' + color + '"/></svg>';
-    }
-
+    // Mejora progresiva: solo el acordeón de mitos. El cronograma, el equipo y las
+    // respuestas de los mitos ya están en el HTML; sin JavaScript todo es legible.
     document.addEventListener('DOMContentLoaded', function () {
-      // --- Cronograma ---
-      var tl = document.getElementById('timeline');
-      if (tl) {
-        SESIONES.forEach(function (s) {
-          var li = document.createElement('li');
-          li.className = 'ses ' + (s.type === 'p' ? 'is-practica' : 'is-teorica');
-          var typeLabel = s.type === 't' ? 'Teórica' : 'Práctica';
-          li.innerHTML =
-            '<span class="marker" aria-hidden="true">' + s.n + '</span>' +
-            '<div class="ses-card' + (s.destacada ? ' highlight' : '') + '">' +
-              '<div class="ses-top">' +
-                '<span class="ses-date">' + s.fecha + '</span>' +
-                '<span class="ses-type ' + s.type + '">' + typeLabel + '</span>' +
-              '</div>' +
-              '<div class="ses-title"><span class="sr-only">Sesión ' + s.n + ': </span>' + s.titulo + '</div>' +
-            '</div>';
-          tl.appendChild(li);
-        });
-      }
-
-      // --- Equipo ---
-      var team = document.getElementById('team');
-      if (team) {
-        EQUIPO.forEach(function (m) {
-          var div = document.createElement('div');
-          div.className = 'member';
-          div.innerHTML = avatarSVG(m.color) +
-            '<div><h3>' + m.nombre + '</h3>' +
-            '<div class="role">' + m.rol + '</div>' +
-            '<p>' + m.bio + '</p></div>';
-          team.appendChild(div);
-        });
-      }
-
       // --- Mitos y verdades (acordeón accesible) ---
       var btns = document.querySelectorAll('.myth-btn');
       btns.forEach(function (btn) {

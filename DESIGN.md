@@ -15,6 +15,8 @@ colors:
   tinta: "#1C1917"
   tinta-suave: "#44403C"
   ambar-resalte: "#FFE08A"
+  teal-paincorp: "#0DB1A4"
+  teal-oscuro-paincorp: "#004A59"
   violeta-etapa: "#7C3AED"
 typography:
   display:

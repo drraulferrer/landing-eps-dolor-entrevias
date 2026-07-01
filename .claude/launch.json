@@ -3,9 +3,10 @@
   "configurations": [
     {
       "name": "eps-landing",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "4178"],
-      "port": 4178
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "python3 -m http.server ${PORT:-4178}"],
+      "port": 4178,
+      "autoPort": true
     }
   ]
 }
