@@ -1,19 +1,27 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-01T00:00:00Z",
+  "generatedAt": "2026-07-01T09:20:00Z",
   "title": "Design System: Landing EPS Dolor Crónico · CS Entrevías",
   "extensions": {
     "colorMeta": {
       "azul-saludmadrid": { "role": "primary", "displayName": "Azul SaludMadrid", "canonical": "#0067A0", "tonalRamp": ["#062338", "#093B5C", "#0C4F7C", "#0067A0", "#3389B9", "#66ABCE", "#A6D0E4", "#E8F2F8"] },
       "azul-profundo": { "role": "primary", "displayName": "Azul Profundo", "canonical": "#004B73", "tonalRamp": ["#021925", "#04263A", "#063953", "#004B73", "#2E6F92", "#6299B4", "#A4C4D6", "#E3EEF4"] },
       "terracota-paincafe": { "role": "secondary", "displayName": "Terracota PainCafé", "canonical": "#C2410C", "tonalRamp": ["#3A1304", "#5C1F07", "#8A2E09", "#C2410C", "#DB6531", "#E88F66", "#F2BFA3", "#FBEFE7"] },
-      "verde-movimiento": { "role": "tertiary", "displayName": "Verde Movimiento", "canonical": "#0D8A7A", "tonalRamp": ["#042A25", "#06423A", "#095F54", "#0D8A7A", "#33A497", "#66BEB4", "#A6DBD4", "#E6F5F2"] },
+      "verde-movimiento": { "role": "tertiary", "displayName": "Verde Movimiento", "canonical": "#0B786B", "tonalRamp": ["#042A25", "#06423A", "#095F54", "#0B786B", "#33A497", "#66BEB4", "#A6DBD4", "#E6F5F2"] },
       "violeta-etapa": { "role": "tertiary", "displayName": "Violeta Etapa", "canonical": "#7C3AED", "tonalRamp": ["#2A1252", "#3F1B7A", "#5A27AE", "#7C3AED", "#9A63F1", "#B78EF5", "#D6BFFA", "#EFE6FD"] },
       "crema-calida": { "role": "neutral", "displayName": "Crema Cálida", "canonical": "#FAF7F2", "tonalRamp": ["#2B2823", "#4A453D", "#6E685E", "#948D81", "#B9B2A6", "#DAD3C7", "#EFE9E1", "#FAF7F2"] },
       "arena": { "role": "neutral", "displayName": "Arena", "canonical": "#EFE9E1", "tonalRamp": ["#2B2820", "#4A453B", "#6C6557", "#8E8676", "#B0A897", "#D0C8B8", "#EFE9E1", "#FAF7F2"] },
       "tinta": { "role": "neutral", "displayName": "Tinta", "canonical": "#1C1917", "tonalRamp": ["#0A0908", "#1C1917", "#3A342F", "#57504A", "#77706A", "#9B948E", "#C7C1BB", "#EDE9E5"] },
       "tinta-suave": { "role": "neutral", "displayName": "Tinta Suave", "canonical": "#44403C", "tonalRamp": ["#1A1816", "#2E2B28", "#44403C", "#615C56", "#807A73", "#A29C94", "#C8C2BA", "#ECE8E3"] },
-      "ambar-resalte": { "role": "accent", "displayName": "Ámbar Resalte", "canonical": "#FFE08A", "tonalRamp": ["#4A3A0A", "#6E5710", "#94781A", "#BC9C2C", "#DFC04D", "#FFE08A", "#FFEBB0", "#FFF6DD"] }
+      "ambar-resalte": { "role": "accent", "displayName": "Ámbar Resalte", "canonical": "#FFE08A", "tonalRamp": ["#4A3A0A", "#6E5710", "#94781A", "#BC9C2C", "#DFC04D", "#FFE08A", "#FFEBB0", "#FFF6DD"] },
+      "teal-paincorp": { "role": "secondary", "displayName": "Teal Paincorp", "canonical": "#0DB1A4", "tonalRamp": ["#032B28", "#054A44", "#077365", "#0DB1A4", "#3FC4B9", "#75D6CD", "#A9E6E0", "#E4F3F0"] },
+      "teal-oscuro-paincorp": { "role": "secondary", "displayName": "Teal Oscuro Paincorp", "canonical": "#004A59", "tonalRamp": ["#001217", "#001F26", "#00323C", "#004A59", "#2C6E7C", "#5E93A0", "#9BC0C9", "#E0EFF2"] },
+      "teal-cobrand-bruma": { "role": "neutral", "displayName": "Teal Co-marca Bruma", "canonical": "#E4F3F0", "tonalRamp": ["#123230", "#1E4E4A", "#2E706A", "#4E948D", "#7BB6AF", "#AAD3CD", "#CBE6E1", "#E4F3F0"] },
+      "verde-oscuro": { "role": "tertiary", "displayName": "Verde Oscuro (AA)", "canonical": "#0B6B5E", "tonalRamp": ["#032420", "#053B34", "#08554B", "#0B6B5E", "#33897E", "#66ABA2", "#A6D0C9", "#E6F5F2"] },
+      "terracota-oscura": { "role": "secondary", "displayName": "Terracota Oscura (AA)", "canonical": "#9A3412", "tonalRamp": ["#2E0F05", "#4A1808", "#71250C", "#9A3412", "#B85A34", "#D08A6C", "#E5BBA6", "#F7E7DF"] },
+      "terracota-tag-bruma": { "role": "secondary", "displayName": "Terracota Tag Bruma", "canonical": "#FDE7D9", "tonalRamp": ["#4A2A18", "#6E4028", "#945A3C", "#BA8266", "#D0A78F", "#E5C7B4", "#F2D9CA", "#FDE7D9"] },
+      "azul-cta-suave": { "role": "primary", "displayName": "Azul CTA Suave (AA)", "canonical": "#DCEAF2", "tonalRamp": ["#12303F", "#1C4A5F", "#2C6E8C", "#4E93B4", "#7BB4D0", "#A9CFE0", "#C6DEEC", "#DCEAF2"] },
+      "carbon-pie": { "role": "neutral", "displayName": "Carbón Pie", "canonical": "#14110F", "tonalRamp": ["#14110F", "#2A2521", "#443D37", "#5F564E", "#7E746B", "#A29890", "#C8C0B9", "#EDE9E5"] }
     },
     "typographyMeta": {
       "display": { "displayName": "Display", "purpose": "Título del hero. Serif, azul profundo." },

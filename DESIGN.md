@@ -7,7 +7,7 @@ colors:
   azul-bruma: "#E8F2F8"
   terracota-paincafe: "#C2410C"
   terracota-bruma: "#FBEFE7"
-  verde-movimiento: "#0D8A7A"
+  verde-movimiento: "#0B786B"
   verde-bruma: "#E6F5F2"
   crema-calida: "#FAF7F2"
   blanco: "#FFFFFF"
@@ -17,7 +17,13 @@ colors:
   ambar-resalte: "#FFE08A"
   teal-paincorp: "#0DB1A4"
   teal-oscuro-paincorp: "#004A59"
+  teal-cobrand-bruma: "#E4F3F0"
   violeta-etapa: "#7C3AED"
+  verde-oscuro: "#0B6B5E"
+  terracota-oscura: "#9A3412"
+  terracota-tag-bruma: "#FDE7D9"
+  azul-cta-suave: "#DCEAF2"
+  carbon-pie: "#14110F"
 typography:
   display:
     fontFamily: "Georgia, Cambria, 'Times New Roman', serif"
@@ -110,7 +116,7 @@ Paleta híbrida de confianza institucional y calidez de barrio, anclada en el az
 - **Terracota Bruma** (#FBEFE7): fondo suave del bloque PainCafé.
 
 ### Tertiary
-- **Verde Movimiento** (#0D8A7A): salud activa y acción. Ticks de la checklist, sesiones prácticas del cronograma, eyebrow "Gratuito", estado abierto del acordeón, nota de equidad.
+- **Verde Movimiento** (#0B786B): salud activa y acción. Oscurecido desde #0D8A7A para cumplir AA con texto blanco (5.4:1) y como texto sobre blanco. Ticks de la checklist, sesiones prácticas del cronograma, eyebrow "Gratuito", estado abierto del acordeón, nota de equidad.
 - **Verde Bruma** (#E6F5F2): fondo de paneles abiertos y notas.
 
 ### Neutral
@@ -123,6 +129,19 @@ Paleta híbrida de confianza institucional y calidez de barrio, anclada en el az
 ### Acentos puntuales
 - **Ámbar Resalte** (#FFE08A): único resalte legible sobre el azul profundo del CTA (mensaje clave, números de paso). No usar sobre fondos claros.
 - **Violeta Etapa** (#7C3AED): exclusivo del Bloque D ("sostener el cambio") y su avatar. Uso mínimo y semántico.
+
+### Co-marca — Fundación Paincorp
+El teal de Paincorp aparece **solo en las costuras de co-marca**; no es un cuarto color semántico de contenido, así que la Regla de los Tres Significados sigue rigiendo el cuerpo de la página.
+- **Teal Paincorp** (#0DB1A4): mitad derecha del borde de la cabecera (degradado azul→teal) y avatar/acento de la colaboración.
+- **Teal Oscuro Paincorp** (#004A59): texto/acento de co-marca legible sobre fondos claros (línea "cobrand" del topbar).
+- **Teal Co-marca Bruma** (#E4F3F0): tramo teal del degradado del hero.
+
+### Variantes de contraste y superficie (AA)
+Tonos derivados que existen para cumplir contraste AA o como superficies concretas; no son decorativos ni intercambiables.
+- **Verde Oscuro** (#0B6B5E): texto sobre verde bruma (chip "Práctica", nota de equidad) — cumple AA.
+- **Terracota Oscura** (#9A3412) sobre **Terracota Tag Bruma** (#FDE7D9): tag "Mito" — cumple AA.
+- **Azul CTA Suave** (#DCEAF2): texto secundario y enlaces sobre el azul profundo del CTA — cumple AA.
+- **Carbón Pie** (#14110F): fondo del pie de página; contraste máximo para el bloque institucional.
 
 ### Named Rules
 **La Regla de los Tres Significados.** Azul = confianza sanitaria, terracota = acogida/PainCafé, verde = movimiento/acción. Un color nunca se usa "porque queda bien": si no comunica uno de esos tres significados, se usa un neutro.
